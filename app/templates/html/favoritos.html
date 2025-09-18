@@ -4,21 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/favoritos.css' %}">
     <title>WebDex | Favoritos</title>
 </head>
 <body>
-    <h1 id="cabecalho">MEUS POKEMONS</h1>
-    <div id="pokemons">
+    <div>
         {% for favorito in favoritos %}
             <div id="pokemon">
                 <img src="{{favorito.img}}">
-                <h1>{{favorito.nome| upper}}</h1>
-                <a href="{% url 'retira-pokemon' favorito.id %}"><button>Tirar dos favoritos</button></a>
-                <a href=""><button>Editar</button></a>
+                <h1>{{favorito.nome}}</h1>
+                <a href="{% url 'retira-pokemon' favorito.id %}"><button>Remover da Pokedex</button></a>
+                <a href="{% url 'editar-pokemon' favorito.id %}"><button>Editar</button></a>
             </div>
         {% endfor %}
-        <a href="{% url 'webdex-home' %}"><button id="voltar">Voltar</button></a>
-    </div> <br>
+        <a href="{% url 'webdex-home' %}"><button>Voltar</button></a>
+    </div>
 </body>
 </html>

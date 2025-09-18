@@ -1,8 +1,9 @@
 
-from django.shortcuts import render, redirect, get_list_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 import requests
 from .models import Pokemon
 from random import randint
+from .forms import PokemonForm
 
 def webdex_home(request):
     if request.method == 'GET':
@@ -86,3 +87,38 @@ def webdex_favoritos(request):
 def webdex_retirar(request,pk):
     pokemon_deletar = Pokemon.objects.get(pk=pk).delete()
     return redirect("webdex-favoritos")
+
+def webdex_editar(request, pk):
+    pokemon_editar = Pokemon.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = PokemonForm(request.POST, instance=pokemon_editar)
+        if form.is_valid():
+            pokemon_editado = form.save(commit=False)
+
+            url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_editado.nome}"
+            response = requests.get(url)
+            if response.status_code == 200:
+                data = response.json()
+                pokemon_editado.pokemon_id = data["id"]
+                pokemon_editado.img = data["sprites"]["front_default"]
+                pokemon_editado.peso = float(data["weight"])/10
+                pokemon_editado.tipo1 = data["types"][0]["type"]["name"]
+                try:
+                    pokemon_editado.tipo2 = data["types"][1]["type"]["name"]
+                except Exception:
+                    pokemon_editado.tipo2 = ''
+                pokemon_editado.hp = data["stats"][0]["base_stat"]
+                pokemon_editado.forca = data["stats"][1]["base_stat"]
+                pokemon_editado.defesa = data["stats"][2]["base_stat"]
+                pokemon_editado.forca_esp = data["stats"][3]["base_stat"]
+                pokemon_editado.defesa_esp = data["stats"][4]["base_stat"]
+                pokemon_editado.velocidade = data["stats"][5]["base_stat"]
+            else:
+                form.add_error('nome', 'Nome de Pokémon inválido.')
+                return render(request, 'html/editar.html', {'form': form, 'pokemon': pokemon_editar})
+            form.save()
+            return redirect('webdex-favoritos')
+    else:
+        form = PokemonForm(instance=pokemon_editar)
+
+    return render(request, 'html/editar.html', {'form': form, 'pokemon': pokemon_editar})
