@@ -1,0 +1,174 @@
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0f0e0f;
+}
+
+#pokemon {
+    padding: 5px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #1f1d20;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    box-shadow: hsla(0, 0%, 0%, 0.493) 0px 0px 30px;
+}
+
+#favoritar {
+    margin-top: 10px;
+}
+
+#img{
+    background-color: white;
+    padding: 20px;
+    border-radius: 100%;
+}
+
+h1{
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+#id{
+    margin-top: 0;
+}
+
+#peso{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+#tipos {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.normal{
+    background-color: cornsilk;
+    color: black;
+}
+
+.fire{
+    background-color: rgb(240, 108, 31);
+}
+
+.grass{
+    background-color: rgb(47, 207, 95);
+}
+
+.water{
+    background-color: rgb(38, 172, 235);
+}
+
+.electric{
+    background-color: rgb(255, 191, 31);
+    color: black;
+}
+
+.ice{
+    background-color: rgb(143, 255, 255);
+    color: black;
+}
+
+.fighting{
+    background-color: rgb(226, 31, 31);
+}
+
+.poison{
+    background-color: rgb(160, 44, 214);
+}
+
+.ground{
+    background-color: rgb(196, 155, 95);
+    color: black;
+}
+
+.flying{
+    background-color: rgb(147, 199, 245);
+    color: black;
+}
+
+.psychic{
+    background-color: rgb(255, 74, 180);
+}
+
+.bug{
+    background-color: rgb(46, 255, 168);
+    color: black;
+}
+
+.rock{
+    background-color: rgb(90, 77, 60);
+}
+
+.ghost{
+    background-color: rgb(114, 13, 209);
+}
+
+.dragon{
+    background-color: rgb(44, 21, 146);
+}
+
+.steel{
+    background-color: rgb(142, 156, 168);
+    color: black;
+}
+
+.dark{
+    background-color: rgb(0, 0, 0);
+}
+
+.fairy{
+    background-color: rgb(255, 109, 199);
+}
+
+h3{
+    margin: 0;
+    margin: 0px 100px 0px 100px;
+}
+
+#status_geral{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+
+#status{
+    display: flex;
+    width: 100%;
+}
+
+#status p{
+    margin: 2px;
+}
+
+button{
+    padding: 7px 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #171518;
+    color: white;
+    border: white solid 1px ;
+    cursor: pointer;
+    transition: background-color, 0.2s,border ,0.2s ;
+}
+
+#exit{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button:hover{
+    background-color: #1f1d20;
+    border: #1f1d20 solid 1px;
+}

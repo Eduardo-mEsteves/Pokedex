@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDex | {{pokemon.nome}}</title>
+    <link rel="stylesheet" href="{% static 'css/pokemons.css' %}">
+</head>
+<body>
+    <div id="pokemon">
+        <div id="favoritar">
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" id="Pokerito">Favoritar</button>
+            </form>
+        </div>
+        <h1>{{pokemon.nome|title}}</h1>
+        <p id="id">#{{pokemon.id}}</p>
+        <div id="img">
+            <img src="{{pokemon.img}}" alt="{{pokemon.nome}}">
+        </div>
+        <p id="peso">Peso: {{pokemon.peso}}kg</p>
+        {% if pokemon.tipo2 != None %}
+            <div id="tipos">
+                <p>Tipos:</p>
+                {% if pokemon.tipo1 == "normal" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="normal">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "fire" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="fire">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "grass" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="grass">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "water" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="water">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "electric" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="electric">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "ice" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="ice">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "fighting" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="fighting">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "ground" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="ground">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "poison" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="poison">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "flying" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="flying">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "psychic" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="psychic">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "bug" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="bug">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "rock" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="rock">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "ghost" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="ghost">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "dragon" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="dragon">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "steel" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="steel">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "dark" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="dark">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "fairy" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="fairy">{{pokemon.tipo1}}</p>
+                {% endif %}
+
+                {% if pokemon.tipo2 == "normal" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="normal">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "fire" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="fire">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "grass" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="grass">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "water" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="water">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "electric" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="electric">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "ice" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="ice">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "fighting" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="fighting">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "ground" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="ground">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "poison" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="poison">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "flying" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="flying">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "psychic" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="psychic">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "bug" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="bug">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "rock" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="rock">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "ghost" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="ghost">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "dragon" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="dragon">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "steel" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="steel">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "dark" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="dark">{{pokemon.tipo2}}</p>
+                {% elif pokemon.tipo2 == "fairy" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="fairy">{{pokemon.tipo2}}</p>
+                {% endif %}
+            </div>
+        {% else %}
+            <div id="tipos">
+                <p>Tipo:</p>
+                {% if pokemon.tipo1 == "normal" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="normal">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "fire" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="fire">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "grass" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="grass">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "water" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="water">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "electric" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="electric">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "ice" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="ice">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "fighting" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="fighting">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "ground" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="ground">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "poison" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="poison">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "flying" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="flying">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "psychic" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="psychic">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "bug" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="bug">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "rock" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="rock">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "ghost" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="ghost">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "dragon" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="dragon">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "steel" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="steel">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "dark" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="dark">{{pokemon.tipo1}}</p>
+                {% elif pokemon.tipo1 == "fairy" %}
+                    <p style="padding: 5px; border-radius: 10px;" class="fairy">{{pokemon.tipo1}}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+        <h3>Status Base:</h3>
+        <div id="status_geral">
+            <div id="status">
+                <p>Hp:</p>
+                <p>{{pokemon.hp}}</p>
+            </div>
+            <div id="status">
+                <p>Força:</p>
+                <p>{{pokemon.forca}}</p>
+            </div>
+            <div id="status">
+                <p>Defesa:</p>
+                <p>{{pokemon.defesa}}</p>
+            </div>
+            <div id="status">
+                <p>Força Esp:</p>
+                <p>{{pokemon.forca_esp}}</p>
+            </div>
+            <div id="status">
+                <p>Defesa Esp:</p>
+                <p>{{pokemon.defesa_esp}}</p>
+            </div>
+            <div id="status">
+                <p>Velocidade:</p>
+                <p>{{pokemon.velocidade}}</p>
+            </div>
+        </div>
+        <div>
+            <a href="{% url 'webdex-home' %}" ><button id="exit">Voltar</button></a>
+        </div>
+    </div>
+</body>
+</html>
