@@ -1,5 +1,5 @@
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404
 import requests
 from .models import Pokemon
 from random import randint
@@ -29,10 +29,9 @@ def webdex_home(request):
                     data    = response.json()
                     return redirect('webdex-pokemon-nome', pokemon=data["pokemon"]["name"])
             else:
-                return render(request, 'html/home.html', {'error': 'Digite o nome de um Pokémon.'})
+                return render(request, 'html/home.html', {'error': 'O nome ou id do pokemon está errado!'})
 
     return render(request, 'html/home.html')
-
 
 def webdex_procurar_nome(request,pokemon):
     url       = f"https://pokeapi.co/api/v2/pokemon/{pokemon}"
@@ -79,3 +78,11 @@ def webdex_procurar_nome(request,pokemon):
         return redirect("webdex-home")
 
     return render(request, 'html/pokemon.html', {"pokemon":informacoes})
+
+def webdex_favoritos(request):
+    pokemons_favoritos = Pokemon.objects.all()
+    return render(request, 'html/favoritos.html', {'favoritos':pokemons_favoritos})
+
+def webdex_retirar(request,pk):
+    pokemon_deletar = Pokemon.objects.get(pk=pk).delete()
+    return redirect("webdex-favoritos")

@@ -36,6 +36,12 @@ body {
     box-shadow: hsla(0, 0%, 0%, 0.493) 0px 0px 30px;
 }
 
+#error{
+    color: crimson;
+    margin: 0;
+    font-size: 10px;
+}
+
 form{
     display: flex;
     flex-direction: column;

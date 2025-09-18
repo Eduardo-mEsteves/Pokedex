@@ -12,7 +12,7 @@
         <div id="formulario">
             <h1>WEBDEX</h1>
             {% if error %}
-                <p>{{error}}</p>
+                <p id="error">{{error}}</p>
             {% endif %}
             <form method="get" id="inputtext">
                 <div id="label">
@@ -47,7 +47,7 @@
 
         <div id="favoritos">
             <h2>Favoritos</h2>
-            <a><button>Ver favoritos</button></a>
+            <a href="{% url 'webdex-favoritos' %}"><button>Ver favoritos</button></a>
         </div>
     </div>
 </body>
