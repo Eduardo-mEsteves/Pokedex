@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDex | Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <div id="site">
+        <div id="formulario">
+            <h1>WEBDEX</h1>
+            {% if error %}
+                <p id="error">{{error}}</p>
+            {% endif %}
+            <form method="get" id="inputtext">
+                <div id="label">
+                    <label id="label" for="pokemonNAME">Buscar pokemon pelo nome:</label>
+                </div>
+                <div>
+                    <input type="text" name="pokemonNAME" id="pokemonNAME">
+                    <input type="hidden" name="tipo" value="nome">
+                </div>
+                <div id="submit">
+                    <button type="submit">Buscar Nome</button>
+                </div>
+            </form>
+            <form method="get"  id="inputtext">
+                <div id="label">
+                    <label for="pokemonID">Buscar pokemon pelo ID:</label>
+                </div>
+                <div>
+                    <input type="text" name="pokemonID" id="pokemonID">
+                    <input type="hidden" name="tipo" value="id">
+                </div>
+                <div id="submit">
+                    <button type="submit">Buscar ID</button>
+                </div>
+            </form>
+            <p id="texto">Pokemon Aleatorio:</p>
+            <form method="get">
+                <input type="hidden" name="tipo" value="random">
+                <button type="submit">Random</button>
+            </form>
+        </div>
+
+        <div id="favoritos">
+            <h2>Favoritos</h2>
+            <a href="{% url 'webdex-favoritos' %}"><button>Ver Pokedex</button></a>
+        </div>
+    </div>
+</body>
+</html>
