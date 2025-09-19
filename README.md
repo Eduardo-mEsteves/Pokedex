@@ -113,7 +113,7 @@ Contribuições são bem-vindas!
 
 Arthur Henry Dias Paiva
 
-Eduardo da França Maciel Esteves
+Eduardo da Franca Maciel Esteves
 
 Gabriel Anthoni Rodrigues Freire
 
