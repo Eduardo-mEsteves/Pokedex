@@ -112,7 +112,10 @@ Contribuições são bem-vindas!
 ## ✍️ Autores
 
 Arthur Henry Dias Paiva
+
 Eduardo da França Maciel Esteves
+
 Marco Aurélio de Araújo Fernandes
+
 Gabriel Anthoni Rodrigues Freire
 
