@@ -115,7 +115,8 @@ Arthur Henry Dias Paiva
 
 Eduardo da França Maciel Esteves
 
+Gabriel Anthoni Rodrigues Freire
+
 Marco Aurélio de Araújo Fernandes
 
-Gabriel Anthoni Rodrigues Freire
 
